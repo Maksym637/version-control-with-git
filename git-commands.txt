@@ -1,0 +1,98 @@
+                                 << ALL ABOUT GIT >>
+<<<-------------------------------------------------------------------------------->>>
+Generate ssh-key for GitHub:
+ssh-keygen -t rsa -C "maksym.oliinyk.knm.2020@lpnu.ua"
+<<<-------------------------------------------------------------------------------->>>
+username: git config --global user.name
+useremail: git config --global user.email
+<<<-------------------------------------------------------------------------------->>>
+Your repository in git-bush:
+> git clone ---> clone directory
+> git add file. ---> add file
+> git status ---> to see status whether is added/to see all changes in files
+> git commit -m "comment"
+> git log ---> to see all story of commits
+
+> git commit -m "comment" ---> write to local repository
+> git push ---> synchronize your local repository with a remote repository
+(from local into github on remote)
+<<<-------------------------------------------------------------------------------->>>
+git pull = git fetch + git merge ---> pulls changes from remote repository to local
+1) adding a new file ---> 1) git add
+2) commit            ---> 2) git commit
+3) push              ---> 3) git push
+<<<-------------------------------------------------------------------------------->>>
+> git gui& ---> desktop of changes
+> gitk& ---> desktop of changes
+<<<-------------------------------------------------------------------------------->>>
+git is built as a graph
+git show -s --pretty=raw ..... ---> see information about this commit
+git ls-tree ..... ---> see what this tree refers to (it must ref. to blobs)
+<<<-------------------------------------------------------------------------------->>>
+Revert changes made to git:
+> git checkout -- file.txt ---> remove all changes from file.txt
+> git checkout . ---> remove changes from all files
+> git clean -xdf ---> remove all new files (with new extension)
+> git reset HEAD~.../git reset HEAD~1 ---> rolls back the change
+<<<-------------------------------------------------------------------------------->>>
+                                 << reset >>
+git reset --soft HEAD~1 ---> go back one commit
+git reset --hard HEAD^ ---> removes all changes in a commit !!!!!!! (be careful)
+<<<-------------------------------------------------------------------------------->>>
+                                 << revert >>
+                           git revert 5-digit-hesh
+                  |                                       |
+                  |                                       |
+                  v                                       v
+     insert = Fn (to write smth)         :wq (to write file content)
+     revert ---> same commit, only with mirrored content
+<<<-------------------------------------------------------------------------------->>>
+File .gitignore:
+in .gitignore ---> we write those files that we do not want to use (we do not want to commit)
+.gitignore(*.log) ---> hides all files with extension .log
+if we want to hide an entire folder, we must place this folder in -> .gitignore
+eg: .gitignore(folder(some files))
+<<<-------------------------------------------------------------------------------->>>
+Branches and their merging:
+fast-forward-merge:
+
+> git checkout -b feature --> creating branch feature
+> git checkout ... ---> switch to another branch
+> git branch --all ---> to see all branches
+> git merge feature (merge changes to the main branch from the feature branch)
+
+non-fast-forward-merge:
+
+------ // ------
+<<<-------------------------------------------------------------------------------->>>
+Conflict solving:
+git merge --abort ---> stop merging
+In order to avoid conflicts, you need to make more commits !
+<<<-------------------------------------------------------------------------------->>>
+Other commands:
+> rebase
+> cherry-pick ---> copying a commit to another location
+<<<-------------------------------------------------------------------------------->>>
+                                 << tag >>
+tag ---> a small marker
+> git tag ver1 ---> highlight a commit tag
+> git tag --list ---> to see list of tags
+> git push --tags ---> push into github
+<<<-------------------------------------------------------------------------------->>>
+Stashing ---> is a file storage
+<<<-------------------------------------------------------------------------------->>>
+                               << remotes >>
+git remote -v
+remote ---> used if lost repository
+<<<-------------------------------------------------------------------------------->>>
+                         << branching strategies >>
+> centralized strategy
+> feature-branch workflow
+> gitflow
+> integration manager workflow
+> dictator and lieutenants workflow
+> forking workflow (used in github)
+<<<-------------------------------------------------------------------------------->>>
+Other commands:
+git config --global alias.work 'log --pretty=format:"%h%x09%an%x09%ad%x09%s"'
+git work
